@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waqas Iqrar - Research Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        h1 {
+            font-size: 2.8rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .greeting {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .title {
+            font-size: 1.3rem;
+            color: #2c5364;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .organization {
+            font-size: 1.1rem;
+            color: #555;
+            font-style: italic;
+        }
+        .content {
+            margin-top: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            color: #2c5364;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        .research-area {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        .construction-notice {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+        .construction-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .construction-text {
+            color: #666;
+            font-size: 1rem;
+            font-style: italic;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 30px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p class="greeting">👋 Hello! I am</p>
+            <h1>Waqas Iqrar</h1>
+            <p class="title">Research Assistant</p>
+            <p class="organization">Biomisa</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Current Research</h2>
+                <div class="research-area">
+                    <strong>Task-Agnostic Meta Learning</strong>
+                    <p style="margin-top: 10px; opacity: 0.95;">
+                        Exploring advanced machine learning approaches that enable models to learn how to learn, 
+                        adapting quickly to new tasks with minimal training data.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="construction-notice">
+            <div class="construction-icon">🚧</div>
+            <p class="construction-text">Website is under construction. More content coming soon!</p>
+        </div>
+    </div>
+</body>
+</html>
