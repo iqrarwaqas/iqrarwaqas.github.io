@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waqas Iqrar - Research Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <style>
         * {
             margin: 0;
@@ -37,6 +39,25 @@
                 transform: translateY(0);
             }
         }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #2c5364;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 8px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .nav a:hover, .nav a.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
         .header {
             text-align: center;
             margin-bottom: 40px;
@@ -64,6 +85,33 @@
             font-size: 1.1rem;
             color: #555;
             font-style: italic;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 18px;
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+        }
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+        .social-links a .ai {
+            font-size: 1.5rem;
         }
         .content {
             margin-top: 30px;
@@ -121,16 +169,33 @@
             .title {
                 font-size: 1.1rem;
             }
+            .nav {
+                gap: 15px;
+            }
+            .nav a {
+                font-size: 0.95rem;
+                padding: 6px 14px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <nav class="nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="publications.html">Publications</a>
+        </nav>
+
         <div class="header">
             <p class="greeting">👋 Hello! I am</p>
             <h1>Waqas Iqrar</h1>
             <p class="title">Research Assistant</p>
             <p class="organization">Biomisa</p>
+            <div class="social-links">
+                <a href="https://scholar.google.com/citations?user=E_lOWHUAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
+                    <i class="ai ai-google-scholar"></i>
+                </a>
+            </div>
         </div>
         
         <div class="content">
