@@ -91,18 +91,22 @@
             gap: 8px;
             margin-top: 15px;
             padding: 10px 22px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
             border-radius: 30px;
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 3px 12px rgba(102, 126, 234, 0.3);
+            box-shadow: none;
         }
         .scholar-badge:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+            background: transparent;
+            color: #764ba2;
+            border-color: #764ba2;
+            box-shadow: none;
         }
         .scholar-badge i {
             font-size: 1.2rem;
@@ -237,17 +241,32 @@
 
             <li class="pub-item">
                 <div class="pub-title">
-                    <a href="#">Publication Title Here</a>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1874490725003702" target="_blank">The AIoT Ecosystem for Next-Generation Satellite Systems</a>
                 </div>
                 <div class="pub-authors">
-                    Waqas Iqrar, Co-Author Name, ...
+                    Waqas Iqrar, Kiran Khurshid, Sagheer Khan, Nasir Saeed
                 </div>
                 <div class="pub-venue">
-                    Journal / Conference Name <span class="pub-year">2025</span>
+                    Physical Communication, Volume 74, 102967 <span class="pub-year">2026</span>
                 </div>
                 <div class="pub-links">
-                    <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-                    <a href="#" target="_blank"><i class="fas fa-link"></i> DOI</a>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1874490725003702/pdfft?md5=74e511740e199fdbab605bec7f5f8da6&pid=1-s2.0-S1874490725003702-main.pdf" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
+                    <a href="https://doi.org/10.1016/j.phycom.2025.102967" target="_blank"><i class="fas fa-link"></i> DOI</a>
+                </div>
+            </li>
+
+            <li class="pub-item">
+                <div class="pub-title">
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10023018" target="_blank">CNN-LSTM Based Smart Real-time Video Surveillance System</a>
+                </div>
+                <div class="pub-authors">
+                    Waqas Iqrar, Malik ZainUl Abidien, Waqas Hameed, Dr. Aamir Shahzad
+                </div>
+                <div class="pub-venue">
+                    14th International Conference on Mathematics, Actuarial Science, Computer Science and Statistics (MACS) <span class="pub-year">2022</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10023018" target="_blank"><i class="fas fa-link"></i> Abstract</a>
                 </div>
             </li>
 
