@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Waqas Iqrar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 760px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #2c5364;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 8px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .nav a:hover, .nav a.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .page-header {
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 20px;
+            margin-bottom: 28px;
+        }
+        .page-header h1 {
+            font-size: 2.1rem;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        .page-header p {
+            color: #666;
+            font-size: 1rem;
+        }
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .cv-btn {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid #2c5364;
+            color: #2c5364;
+            transition: all 0.3s ease;
+        }
+        .cv-btn:hover {
+            color: #ffffff;
+            border-color: transparent;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .preview-wrap {
+            margin-top: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #d7dce2;
+            background: #ffffff;
+        }
+        .preview-wrap iframe {
+            width: 100%;
+            height: 600px;
+            border: 0;
+        }
+        @media (max-width: 700px) {
+            .container {
+                padding: 35px 22px;
+            }
+            .page-header h1 {
+                font-size: 1.7rem;
+            }
+            .nav {
+                gap: 12px;
+            }
+            .nav a {
+                font-size: 0.95rem;
+                padding: 6px 12px;
+            }
+            .preview-wrap iframe {
+                height: 430px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="publications.html">Publications</a>
+            <a href="cv.html" class="active">CV</a>
+        </nav>
+
+        <div class="page-header">
+            <h1>Curriculum Vitae</h1>
+            <p>View or download the latest CV</p>
+        </div>
+
+        <div class="actions">
+            <a href="assets/WaqasIqrar_CV.pdf" target="_blank" rel="noopener noreferrer" class="cv-btn">
+                <i class="fas fa-up-right-from-square"></i> Open CV
+            </a>
+            <a href="assets/WaqasIqrar_CV.pdf" download class="cv-btn">
+                <i class="fas fa-file-arrow-down"></i> Download CV
+            </a>
+        </div>
+
+        <div class="preview-wrap">
+            <iframe src="assets/WaqasIqrar_CV.pdf" title="Waqas Iqrar CV"></iframe>
+        </div>
+    </div>
+</body>
+</html>
