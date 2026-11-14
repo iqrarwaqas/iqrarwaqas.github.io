@@ -1,297 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waqas Iqrar - Research Assistant</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 60px 50px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 0.8s ease-in;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        .nav a {
-            text-decoration: none;
-            color: #2c5364;
-            font-weight: 600;
-            font-size: 1.05rem;
-            padding: 8px 18px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        .nav a:hover, .nav a.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #e0e0e0;
-        }
-        h1 {
-            font-size: 2.8rem;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        .greeting {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .title {
-            font-size: 1.3rem;
-            color: #2c5364;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-        .organization {
-            font-size: 1.1rem;
-            color: #555;
-            font-style: italic;
-        }
-        .organization a {
-            color: inherit;
-            text-decoration: none;
-        }
-        .organization a:hover {
-            text-decoration: underline;
-        }
-        .organization-logo {
-            margin-top: 10px;
-        }
-        .organization-logo a {
-            display: inline-block;
-        }
-        .organization-logo img {
-            width: 220px;
-            max-width: 85%;
-            height: auto;
-        }
-        .social-label {
-            margin-top: 14px;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: #666;
-            font-weight: 500;
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 18px;
-            margin-top: 18px;
-        }
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            font-size: 1.3rem;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
-        }
-        .social-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
-        }
-        .social-links a .ai {
-            font-size: 1.5rem;
-        }
-        .social-links a.scholar-link {
-            background: #ffffff;
-            color: #4285F4;
-            box-shadow: 0 3px 10px rgba(66, 133, 244, 0.35);
-        }
-        .social-links a.scholar-link:hover {
-            color: #1a73e8;
-            box-shadow: 0 6px 20px rgba(66, 133, 244, 0.5);
-        }
-        .social-links a.github-link {
-            background: #ffffff;
-            color: #111111;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
-        }
-        .social-links a.github-link:hover {
-            color: #000000;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
-        }
-        .social-links a.linkedin-link {
-            background: #0A66C2;
-            color: #ffffff;
-            box-shadow: 0 3px 10px rgba(10, 102, 194, 0.35);
-        }
-        .social-links a.linkedin-link:hover {
-            background: #004182;
-            color: #ffffff;
-            box-shadow: 0 6px 20px rgba(10, 102, 194, 0.5);
-        }
-        .social-links a.email-link {
-            background: #ffffff;
-            color: #d44638;
-            box-shadow: 0 3px 10px rgba(212, 70, 56, 0.28);
-        }
-        .social-links a.email-link:hover {
-            color: #b23121;
-            box-shadow: 0 6px 20px rgba(212, 70, 56, 0.4);
-        }
-        .content {
-            margin-top: 30px;
-        }
-        .section {
-            margin-bottom: 30px;
-        }
-        .section-title {
-            font-size: 1.3rem;
-            color: #2c5364;
-            font-weight: 600;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-        .research-area {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-        .construction-notice {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 2px solid #e0e0e0;
-        }
-        .construction-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        .construction-text {
-            color: #666;
-            font-size: 1rem;
-            font-style: italic;
-        }
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 30px;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            .title {
-                font-size: 1.1rem;
-            }
-            .nav {
-                gap: 15px;
-            }
-            .nav a {
-                font-size: 0.95rem;
-                padding: 6px 14px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waqas Iqrar | Computer Vision and Continual Learning</title>
+  <meta name="description" content="Waqas Iqrar is an AI engineer and researcher working on computer vision, continual and meta-learning, and embedded AI. MS Computer Engineering, NUST.">
+  <link rel="canonical" href="https://iqrarwaqas.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Waqas Iqrar | Computer Vision and Continual Learning">
+  <meta property="og:description" content="Research, projects and publications on continual learning, semantic segmentation and embedded AI.">
+  <meta property="og:url" content="https://iqrarwaqas.github.io/">
+  <meta name="theme-color" content="#0a1220">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Waqas Iqrar",
+    "url": "https://iqrarwaqas.github.io/",
+    "jobTitle": "Associate AI Engineer",
+    "worksFor": { "@type": "Organization", "name": "Synapsify" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "National University of Sciences and Technology (NUST)" },
+      { "@type": "CollegeOrUniversity", "name": "COMSATS University Islamabad, Abbottabad Campus" }
+    ],
+    "knowsAbout": ["Computer vision", "Continual learning", "Meta-learning", "Semantic segmentation", "Embedded AI"],
+    "sameAs": [
+      "https://scholar.google.com/citations?user=E_lOWHUAAAAJ",
+      "https://github.com/iqrarwaqas",
+      "https://www.linkedin.com/in/waqasiqrar",
+      "https://www.researchgate.net/profile/Waqas-Iqrar"
+    ]
+  }
+  </script>
 </head>
 <body>
-    <div class="container">
-        <nav class="nav">
-            <a href="index.html" class="active">Home</a>
-            <a href="publications.html">Publications</a>
-            <a href="cv.html">CV</a>
-        </nav>
+  <a class="skip" href="#main">Skip to content</a>
 
-        <div class="header">
-            <p class="greeting">Welcome Visitor : //--//</p>
-            <h1>Waqas Iqrar</h1>
-            <p class="title">Research Assistant at</p>
-            <p class="organization organization-logo">
-                <a href="https://biomisa.org/" target="_blank" title="Biomisa">
-                    <img src="https://biomisa.org/wp-content/uploads/2018/06/biomisaLogo-300x57.png" alt="Biomisa logo">
-                </a>
-            </p>
-        </div>
-        
-        <div class="content">
-            <div class="section">
-                <h2 class="section-title">Current Research</h2>
-                <div class="research-area">
-                    <strong>Task-Agnostic Meta Learning</strong>
-                    <p style="margin-top: 10px; opacity: 0.95;">
-                        Exploring advanced machine learning approaches that enable models to learn how to learn, 
-                        adapting quickly to new tasks with minimal training data.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="construction-notice">
-            <div class="construction-icon">🚧</div>
-            <p class="construction-text">Website is under construction. More content coming soon!</p>
-            <p class="social-label">Connect with me</p>
-            <div class="social-links">
-                <a href="https://scholar.google.com/citations?user=E_lOWHUAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar" class="scholar-link">
-                    <i class="ai ai-google-scholar"></i>
-                </a>
-                <a href="https://github.com/iqrarwaqas" target="_blank" title="GitHub" class="github-link">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/waqas-iqrar-838260177" target="_blank" title="LinkedIn" class="linkedin-link">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:waqasiqrar99@gmail.com" title="Email" class="email-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Waqas Iqrar</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>
+        </button>
+      </nav>
     </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow mono">Computer vision · Continual learning · Embedded AI</p>
+          <h1>Waqas Iqrar</h1>
+          <p class="lead">I build vision models that keep learning new classes without forgetting the old ones. My MS thesis at NUST applied this to segmenting threats in baggage X-ray scans.</p>
+          <p class="status">I completed my MS in Computer Engineering in June 2026. I now work as an Associate AI Engineer at Synapsify in Islamabad, and I am looking for a PhD position starting in 2027.</p>
+          <div class="actions">
+            <a class="btn primary" href="publications.html">Publications</a>
+            <a class="btn" href="cv.html">Curriculum vitae</a>
+          </div>
+          <ul class="links mono">
+            <li><a href="https://scholar.google.com/citations?user=E_lOWHUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a href="https://github.com/iqrarwaqas" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/waqasiqrar" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.researchgate.net/profile/Waqas-Iqrar" target="_blank" rel="noopener">ResearchGate</a></li>
+            <li><a href="mailto:waqasiqrar99@gmail.com">Email</a></li>
+          </ul>
+        </div>
+
+        <figure class="scan">
+          <svg viewBox="0 0 440 300" role="img" aria-label="Diagram of a baggage X-ray scan. Segmentation masks appear in three steps: laptop and bottle first, then scissors, then a knife.">
+            <rect class="bag" x="70" y="58" width="300" height="204" rx="22"/>
+            <path class="bag" d="M170 58V42a12 12 0 0 1 12-12h76a12 12 0 0 1 12 12v16" fill="none"/>
+
+            <g class="step s1">
+              <g class="c-blue">
+                <rect class="mask" x="92" y="84" width="132" height="88" rx="6"/>
+                <text class="tag" x="101" y="102">laptop</text>
+              </g>
+              <g class="c-orange">
+                <path class="mask" d="M313 92h20v16c7 3 11 9 11 17v92a10 10 0 0 1-10 10h-22a10 10 0 0 1-10-10v-92c0-8 4-14 11-17z"/>
+                <text class="tag" x="296" y="102" text-anchor="end">bottle</text>
+              </g>
+            </g>
+
+            <g class="step s2 c-green">
+              <circle class="mask" cx="252" cy="216" r="11"/>
+              <circle class="mask" cx="280" cy="216" r="11"/>
+              <path class="stroke" d="M256 205l26-66M276 205l-26-66"/>
+              <text class="tag" x="266" y="249" text-anchor="middle">scissors</text>
+            </g>
+
+            <g class="step s3 c-red">
+              <path class="mask" d="M96 232l76-22 8 22z"/>
+              <rect class="mask" x="180" y="216" width="42" height="16" rx="4"/>
+              <text class="tag" x="98" y="204">knife</text>
+            </g>
+
+            <rect class="beam" x="20" y="14" width="2" height="272"/>
+          </svg>
+          <ol class="steps mono">
+            <li><i style="background:#6ea8ff"></i><i style="background:#ff9d47"></i>Step 1: laptop, bottle</li>
+            <li><i style="background:#58d39a"></i>Step 2: + scissors</li>
+            <li><i style="background:#ff6f93"></i>Step 3: + knife</li>
+          </ol>
+          <figcaption>Class-incremental segmentation. The model learns new object classes in steps and still segments the ones it learned earlier.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="wrap">
+        <div class="section-label">
+          <h2>Research</h2>
+          <p>What I work on</p>
+        </div>
+        <div>
+          <article class="card thesis">
+            <p class="mono muted">MS thesis · NUST, BIOMISA Research Group · completed June 2026</p>
+            <h3>Seg-ITAML: An Incremental Task-Aware Meta-Learning Framework for Semantic Segmentation in Baggage Threat Detection</h3>
+            <div class="prose">
+              <p>Airport scanners meet new prohibited items over time. Retraining a segmentation model from scratch for every new item is slow, and fine-tuning on the new item alone makes the model forget the old ones.</p>
+              <p>The thesis takes the idea behind iTAML from image classification to pixel-level segmentation. The resulting method, TAMIS, is a task-aware meta-learning model for task-incremental segmentation of threats such as guns and knives. It adds new classes in steps while keeping the ones it already knows.</p>
+            </div>
+            <dl class="facts">
+              <div><dt class="mono">Backbone</dt><dd>SegFormer</dd></div>
+              <div><dt class="mono">Data</dt><dd>Multiple baggage X-ray datasets</dd></div>
+              <div><dt class="mono">Status</dt><dd>TAMIS paper under review at Applied Soft Computing</dd></div>
+            </dl>
+          </article>
+
+          <ul class="chips" aria-label="Research interests">
+            <li>Continual and incremental learning</li>
+            <li>Meta-learning</li>
+            <li>Semantic segmentation</li>
+            <li>Medical and security imaging</li>
+            <li>Embedded AI</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section-label">
+          <h2>Experience</h2>
+        </div>
+        <div class="rows">
+          <article class="row">
+            <p class="when mono">Jun 2026 – now</p>
+            <div class="body">
+              <h3>Associate AI Engineer</h3>
+              <p class="where">Synapsify · Islamabad</p>
+              <ul class="bullets">
+                <li>Built S3, a pipeline in Blender that drives head and eye animation from speech, script and scene.</li>
+                <li>Developed speech-driven tongue animation that maps aligned phonemes to character rig shape keys.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="row">
+            <p class="when mono">Sep 2024 – now</p>
+            <div class="body">
+              <h3>Research Assistant</h3>
+              <p class="where">BIOMISA Research Group, NUST · Rawalpindi</p>
+              <ul class="bullets">
+                <li>Developed TAMIS, a task-aware meta-learning method for task-incremental semantic segmentation of threats in baggage X-ray images.</li>
+                <li>Implemented task-incremental meta-learning for classification first, then integrated a SegFormer backbone for segmentation.</li>
+                <li>Trained and evaluated models across multiple baggage X-ray datasets.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="row">
+            <p class="when mono">Mar 2025 – Dec 2025</p>
+            <div class="body">
+              <h3>Teaching Assistant, part-time</h3>
+              <p class="where">Yangtze University, East Campus · Jingzhou, China</p>
+              <p>Prepared bilingual (Chinese and English) lecture slides for undergraduate courses in Electrical Safety, Power System Relaying and Object-Oriented Programming.</p>
+            </div>
+          </article>
+          <article class="row">
+            <p class="when mono">Jun 2024 – Aug 2024</p>
+            <div class="body">
+              <h3>Machine Learning Intern</h3>
+              <p class="where">RISETech</p>
+              <p>Implemented, trained and tested models for detecting diabetic retinopathy and glaucoma from retinal images.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-label">
+          <h2>Projects</h2>
+          <p>Selected work</p>
+        </div>
+        <div class="projects">
+          <article class="project">
+            <p class="kind mono">Animation · 2026</p>
+            <h3>S3: speech, script and scene-driven gaze and head animation</h3>
+            <p>Separates when a character looks away from where it looks. A two-stream LSTM predicts gaze aversion timing, a saliency-weighted random walk picks gaze targets, and a BERT-conditioned BiLSTM generates head motion.</p>
+            <p class="stack mono">Blender · MediaPipe · ETH-XGaze · WhisperX · NeMo</p>
+          </article>
+          <article class="project">
+            <p class="kind mono">Animation · 2026</p>
+            <h3>Speech-driven tongue animation</h3>
+            <p>Maps force-aligned ARPABET phonemes to Character Creator 4 rig shape keys, calibrated against EMA articulatory data with a custom Python tool.</p>
+            <p class="stack mono">Python · MFA · Blender</p>
+          </article>
+          <article class="project">
+            <p class="kind mono">Edge AI</p>
+            <h3>Baggage segmentation on Jetson Nano</h3>
+            <p>Trained a SegFormer model to segment items in baggage X-ray images and deployed it on a Jetson Nano for security screening at the edge.</p>
+            <p class="stack mono">SegFormer · Jetson Nano</p>
+          </article>
+          <article class="project">
+            <p class="kind mono">Final-year project · 2022</p>
+            <h3>Intelligent surveillance system</h3>
+            <p>A CNN-LSTM model that flags violent and suspicious activity in video. It runs standalone on a Raspberry Pi at 10 to 13 FPS. It received IGNITE funding from Pakistan's Ministry of IT.</p>
+            <p class="stack mono">CNN-LSTM · Raspberry Pi</p>
+          </article>
+          <article class="project">
+            <p class="kind mono">Detection</p>
+            <h3>Real-time weapon detection</h3>
+            <p>YOLOv4 trained on a custom dataset to detect weapons in real time, including telling real weapons apart from toy ones.</p>
+            <p class="stack mono">YOLOv4 · Custom dataset</p>
+          </article>
+          <article class="project">
+            <p class="kind mono">Digital design</p>
+            <h3>8-bit CPU in Verilog</h3>
+            <p>Modelled the full architecture of an 8-bit CPU that performs 14 operations.</p>
+            <p class="stack mono">Verilog · ModelSim</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="wrap">
+        <div class="section-label">
+          <h2>Publications</h2>
+          <p><a href="publications.html">Full list with BibTeX</a></p>
+        </div>
+        <div class="rows">
+          <article class="row">
+            <p class="when mono">2026</p>
+            <div class="body">
+              <h3>TAMIS: An Incremental Task-Aware Meta-Learning Segmentation Model</h3>
+              <p class="authors"><strong>W. Iqrar</strong>, M. U. Akram, T. Hassan, K. Khurshid, M. M. Mohsin</p>
+              <p class="venue">Applied Soft Computing <span class="badge mono">under review</span></p>
+            </div>
+          </article>
+          <article class="row">
+            <p class="when mono">2026</p>
+            <div class="body">
+              <h3><a href="https://doi.org/10.1016/j.phycom.2025.102967" target="_blank" rel="noopener">The AIoT Ecosystem for Next-Generation Satellite Systems</a></h3>
+              <p class="authors"><strong>W. Iqrar</strong>, K. Khurshid, S. Khan, N. Saeed</p>
+              <p class="venue">Physical Communication, vol. 74</p>
+            </div>
+          </article>
+          <article class="row">
+            <p class="when mono">2023</p>
+            <div class="body">
+              <h3><a href="https://ieeexplore.ieee.org/document/10075257" target="_blank" rel="noopener">A Real-time Sequence Based Human Activity Detection System</a></h3>
+              <p class="authors"><strong>W. Iqrar</strong>, A. Shahzad, W. Hameed, M. Z. Abidien</p>
+              <p class="venue">IEEE IMCERT 2023</p>
+            </div>
+          </article>
+          <article class="row">
+            <p class="when mono">2023</p>
+            <div class="body">
+              <h3><a href="https://ieeexplore.ieee.org/document/10325813" target="_blank" rel="noopener">Design Validation and Regulation of Boost Converter: A Bond Graph Approach</a></h3>
+              <p class="authors">R. Iqrar, <strong>W. Iqrar</strong>, S. Mazhar</p>
+              <p class="venue">IEEE ICoDT2 2023</p>
+            </div>
+          </article>
+          <article class="row">
+            <p class="when mono">2022</p>
+            <div class="body">
+              <h3><a href="https://ieeexplore.ieee.org/abstract/document/10023018" target="_blank" rel="noopener">CNN-LSTM Based Smart Real-time Video Surveillance System</a></h3>
+              <p class="authors"><strong>W. Iqrar</strong>, M. Z. Abidien, W. Hameed, A. Shahzad</p>
+              <p class="venue">IEEE MACS 2022</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="background">
+      <div class="wrap">
+        <div class="section-label">
+          <h2>Background</h2>
+        </div>
+        <div class="two-col">
+          <div>
+            <h3>Education</h3>
+            <ul class="plain">
+              <li>MS Computer Engineering<small>NUST College of Electrical and Mechanical Engineering · Sep 2024 to Jun 2026</small></li>
+              <li>BS Electrical (Electronics) Engineering<small>COMSATS University Islamabad, Abbottabad Campus · Sep 2018 to Aug 2022</small></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Awards and certificates</h3>
+            <ul class="plain">
+              <li>IGNITE funding award<small>Ministry of Information Technology, Pakistan · NGIRI-2022-12025</small></li>
+              <li>Paper presenter, IMCERT 2023</li>
+              <li>Registered Engineer<small>Pakistan Engineering Council</small></li>
+              <li><a href="https://coursera.org/share/915ad25aba43e480677c01075bc962e8" target="_blank" rel="noopener">Fundamentals of Reinforcement Learning</a><small>University of Alberta and Amii, Coursera</small></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <h2>I am glad to talk about PhD positions, research collaborations and applied vision work.</h2>
+        <p>Email is the fastest way to reach me.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:waqasiqrar99@gmail.com">waqasiqrar99@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/waqasiqrar" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year">2026</span> Waqas Iqrar</p>
+      <p><a href="https://github.com/iqrarwaqas/iqrarwaqas.github.io" target="_blank" rel="noopener">Source on GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

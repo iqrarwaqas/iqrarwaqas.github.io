@@ -1,160 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Waqas Iqrar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .container {
-            width: 100%;
-            max-width: 760px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 50px 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 0.8s ease-in;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        .nav a {
-            text-decoration: none;
-            color: #2c5364;
-            font-weight: 600;
-            font-size: 1.05rem;
-            padding: 8px 18px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        .nav a:hover, .nav a.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .page-header {
-            text-align: center;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 20px;
-            margin-bottom: 28px;
-        }
-        .page-header h1 {
-            font-size: 2.1rem;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-        }
-        .page-header p {
-            color: #666;
-            font-size: 1rem;
-        }
-        .actions {
-            display: flex;
-            justify-content: center;
-            gap: 14px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-        .cv-btn {
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 18px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            border: 2px solid #2c5364;
-            color: #2c5364;
-            transition: all 0.3s ease;
-        }
-        .cv-btn:hover {
-            color: #ffffff;
-            border-color: transparent;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .preview-wrap {
-            margin-top: 24px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #d7dce2;
-            background: #ffffff;
-        }
-        .preview-wrap iframe {
-            width: 100%;
-            height: 600px;
-            border: 0;
-        }
-        @media (max-width: 700px) {
-            .container {
-                padding: 35px 22px;
-            }
-            .page-header h1 {
-                font-size: 1.7rem;
-            }
-            .nav {
-                gap: 12px;
-            }
-            .nav a {
-                font-size: 0.95rem;
-                padding: 6px 12px;
-            }
-            .preview-wrap iframe {
-                height: 430px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV | Waqas Iqrar</title>
+  <meta name="description" content="Curriculum vitae of Waqas Iqrar: education, experience, publications, projects and skills.">
+  <link rel="canonical" href="https://iqrarwaqas.github.io/cv.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CV | Waqas Iqrar">
+  <meta property="og:url" content="https://iqrarwaqas.github.io/cv.html">
+  <meta name="theme-color" content="#0a1220">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="publications.html">Publications</a>
-            <a href="cv.html" class="active">CV</a>
-        </nav>
+  <a class="skip" href="#main">Skip to content</a>
 
-        <div class="page-header">
-            <h1>Curriculum Vitae</h1>
-            <p>View or download the latest CV</p>
-        </div>
-
-        <div class="actions">
-            <a href="assets/WaqasIqrar_CV.pdf" target="_blank" rel="noopener noreferrer" class="cv-btn">
-                <i class="fas fa-up-right-from-square"></i> Open CV
-            </a>
-            <a href="assets/WaqasIqrar_CV.pdf" download class="cv-btn">
-                <i class="fas fa-file-arrow-down"></i> Download CV
-            </a>
-        </div>
-
-        <div class="preview-wrap">
-            <iframe src="assets/WaqasIqrar_CV.pdf" title="Waqas Iqrar CV"></iframe>
-        </div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Waqas Iqrar</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html" aria-current="page">CV</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>
+        </button>
+      </nav>
     </div>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <div class="wrap">
+        <h1>Curriculum vitae</h1>
+        <p>Waqas Iqrar · Pakistan · <a href="mailto:waqasiqrar99@gmail.com">waqasiqrar99@gmail.com</a></p>
+        <div class="actions">
+          <a class="btn primary" href="assets/WaqasIqrar_CV.pdf" download>Download PDF</a>
+          <a class="btn" href="assets/WaqasIqrar_CV.pdf" target="_blank" rel="noopener">Open PDF</a>
+          <button class="btn" type="button" onclick="window.print()">Print this page</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-label"><h2>Summary</h2></div>
+        <div class="prose">
+          <p>I completed my MS in Computer Engineering at NUST on 8 June 2026. My research interests are continual and incremental learning, meta-learning, semantic segmentation, medical and security imaging, and embedded AI. I have one published journal article, one manuscript under review and three IEEE conference papers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-label"><h2>Education</h2></div>
+        <div class="rows">
+          <article class="row">
+            <p class="when mono">Sep 2024 – Jun 2026</p>
+            <div class="body">
+              <h3>MS Computer Engineering</h3>
+              <p class="where">College of Electrical and Mechanical Engineering, NUST · Rawalpindi · CGPA 3.7/4.0</p>
+              <p>Thesis: Seg-ITAML: An Incremental Task-Aware Meta-Learning Framework for Semantic Segmentation in Baggage Threat Detection.</p>
+              <p class="muted">Coursework: Deep Learning, Digital Image Processing, Machine Learning for Embedded Systems, Advanced Programming in Python, Advanced Computer Architecture, Advanced Digital Signal Processing, Advanced Digital System Design.</p>
+            </div>
+          </article>
+          <article class="row">
+            <p class="when mono">Sep 2018 – Aug 2022</p>
+            <div class="body">
+              <h3>BS Electrical (Electronics) Engineering</h3>
+              <p class="where">COMSATS University Islamabad, Abbottabad Campus · CGPA 3.06/4.0</p>
+              <p>Thesis: Improved Intelligent Surveillance System (award-winning final-year project).</p>
+              <p class="muted">Coursework: Control Systems, Digital Signal Processing, Digital System Design, VLSI Design, Digital Logic Design, Object Oriented Programming.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-label"><h2>Experience</h2></div>
+        <div class="rows">
+          <article class="row">
+            <p class="when mono">Jun 2026 – now</p>
+            <div class="body">
+              <h3>Associate AI Engineer</h3>
+              <p class="where">Synapsify · Islamabad</p>
+              <ul class="bullets">
+                <li>Built S3, a speech, script and scene-driven head and eye animation pipeline in Blender. It separates gaze timing (two-stream LSTM aversion network) from gaze location (saliency-weighted random walk), with an IK gaze controller and a BERT-conditioned BiLSTM for head motion.</li>
+                <li>Developed speech-driven tongue animation by mapping MFA-aligned ARPABET phonemes to CC4 rig shape keys, calibrated from EMA articulatory data in a custom Python tool.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="row">
+            <p class="when mono">Sep 2024 – now</p>
+            <div class="body">
+              <h3>Research Assistant</h3>
+              <p class="where">BIOMISA Research Group, NUST · Rawalpindi</p>
+              <ul class="bullets">
+                <li>Developed TAMIS, a task-aware meta-learning method for task-incremental semantic segmentation of threats (guns, knives) in baggage X-ray images.</li>
+                <li>Conducted an extensive literature survey on incremental meta-learning.</li>
+                <li>Implemented task-incremental meta-learning for classification, then integrated a SegFormer backbone for segmentation.</li>
+                <li>Trained and evaluated models across multiple baggage X-ray datasets.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="row">
+            <p class="when mono">Mar 2025 – Dec 2025</p>
+            <div class="body">
+              <h3>Teaching Assistant, part-time</h3>
+              <p class="where">Yangtze University, East Campus · Jingzhou, Hubei, China</p>
+              <p>Prepared bilingual (Chinese and English) lecture slides for undergraduate courses in Electrical Safety, Power System Relaying and Object-Oriented Programming.</p>
+            </div>
+          </article>
+          <article class="row">
+            <p class="when mono">Jun 2024 – Aug 2024</p>
+            <div class="body">
+              <h3>Machine Learning Intern</h3>
+              <p class="where">RISETech</p>
+              <p>Developed machine learning techniques for detecting diabetic retinopathy and glaucoma. Implemented, trained and tested the models end to end.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-label">
+          <h2>Publications</h2>
+          <p><a href="publications.html">Details and BibTeX</a></p>
+        </div>
+        <ol class="plain">
+          <li><strong>W. Iqrar</strong>, M. U. Akram, T. Hassan, K. Khurshid, M. M. Mohsin. “TAMIS: An Incremental Task-Aware Meta-Learning Segmentation Model.” <em>Applied Soft Computing</em>, under review, 2026.</li>
+          <li><strong>W. Iqrar</strong>, K. Khurshid, S. Khan, N. Saeed. “The AIoT Ecosystem for Next-Generation Satellite Systems.” <em>Physical Communication</em>, vol. 74, 102967, 2026.</li>
+          <li><strong>W. Iqrar</strong>, A. Shahzad, W. Hameed, M. Z. Abidien. “A Real-time Sequence Based Human Activity Detection System.” <em>IEEE IMCERT</em>, 2023.</li>
+          <li>R. Iqrar, <strong>W. Iqrar</strong>, S. Mazhar. “Design Validation and Regulation of Boost Converter: A Bond Graph Approach.” <em>IEEE ICoDT2</em>, 2023.</li>
+          <li><strong>W. Iqrar</strong>, M. Z. Abidien, W. Hameed, A. Shahzad. “CNN-LSTM Based Smart Real-time Video Surveillance System.” <em>IEEE MACS</em>, 2022.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-label"><h2>Projects</h2></div>
+        <ul class="plain">
+          <li><strong>Baggage threat segmentation on edge hardware.</strong> Trained a SegFormer segmentation model and deployed it on an NVIDIA Jetson Nano for security screening.</li>
+          <li><strong>Intelligent surveillance system.</strong> Built a CNN-LSTM model that detects suspicious activity in real time and deployed it as a standalone system on a Raspberry Pi at 10 to 13 FPS.</li>
+          <li><strong>Real vs. toy weapon detection.</strong> Trained YOLOv4 on a custom dataset to detect weapons in real time and distinguish real weapons from toys.</li>
+          <li><strong>Speech, script and scene-driven head and eye animation.</strong> Generated conversational head and eye animation in Blender, combining MediaPipe and solvePnP head pose, ETH-XGaze eye gaze, NeMo diarization and WhisperX transcripts with an IK gaze controller and a BERT-conditioned BiLSTM.</li>
+          <li><strong>Speech-driven tongue animation.</strong> Mapped MFA-aligned ARPABET phonemes to CC4 rig shape keys, calibrated from EMA articulatory data in a custom Python tool.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-label"><h2>Skills</h2></div>
+        <dl class="skills">
+          <div><dt class="mono">Programming</dt><dd>Python, C++, Java, MATLAB, Verilog</dd></div>
+          <div><dt class="mono">Tools</dt><dd>Google Colab, Xilinx/FPGA, ModelSim, Multisim, Microsoft Visio, Blender</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-label"><h2>Awards and certifications</h2></div>
+        <ul class="plain">
+          <li>IGNITE funding award, Ministry of Information Technology, Pakistan (NGIRI-2022-12025)</li>
+          <li>Certificate of appreciation as paper presenter, IMCERT 2023</li>
+          <li>Registered Engineer, Pakistan Engineering Council</li>
+          <li><a href="https://coursera.org/share/915ad25aba43e480677c01075bc962e8" target="_blank" rel="noopener">Fundamentals of Reinforcement Learning</a>, University of Alberta and Amii (Coursera)</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year">2026</span> Waqas Iqrar</p>
+      <p><a href="index.html#contact">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

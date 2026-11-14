@@ -1,301 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Waqas Iqrar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 20px;
-        }
-        .container {
-            max-width: 900px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 60px 50px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 0.8s ease-in;
-            margin: 20px 0;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        .nav a {
-            text-decoration: none;
-            color: #2c5364;
-            font-weight: 600;
-            font-size: 1.05rem;
-            padding: 8px 18px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        .nav a:hover, .nav a.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .page-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 25px;
-            border-bottom: 2px solid #e0e0e0;
-        }
-        .page-header h1 {
-            font-size: 2.2rem;
-            color: #1a1a1a;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        .page-header p {
-            color: #666;
-            font-size: 1.05rem;
-        }
-        .page-header a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .page-header a:hover {
-            color: #764ba2;
-        }
-        .scholar-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 15px;
-            padding: 10px 22px;
-            background: transparent;
-            color: #667eea;
-            border: 2px solid #667eea;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: none;
-        }
-        .scholar-badge:hover {
-            transform: translateY(-2px);
-            background: transparent;
-            color: #764ba2;
-            border-color: #764ba2;
-            box-shadow: none;
-        }
-        .scholar-badge i {
-            font-size: 1.2rem;
-        }
-        .pub-list {
-            list-style: none;
-        }
-        .pub-item {
-            padding: 25px;
-            margin-bottom: 20px;
-            background: #f8f9ff;
-            border-radius: 12px;
-            border-left: 4px solid #667eea;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .pub-item:hover {
-            transform: translateX(4px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
-        .pub-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-        .pub-title a {
-            color: #1a1a1a;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .pub-title a:hover {
-            color: #667eea;
-        }
-        .pub-authors {
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 6px;
-            line-height: 1.5;
-        }
-        .pub-venue {
-            font-size: 0.9rem;
-            color: #888;
-            font-style: italic;
-        }
-        .pub-year {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-left: 8px;
-        }
-        .pub-links {
-            margin-top: 10px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .pub-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 4px 12px;
-            font-size: 0.8rem;
-            color: #667eea;
-            border: 1px solid #667eea;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .pub-links a:hover {
-            background: #667eea;
-            color: white;
-        }
-        .note-box {
-            text-align: center;
-            margin-top: 30px;
-            padding: 20px;
-            background: #f0f0f5;
-            border-radius: 12px;
-            color: #666;
-            font-size: 0.95rem;
-        }
-        .note-box a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .note-box a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 25px;
-            }
-            .page-header h1 {
-                font-size: 1.8rem;
-            }
-            .pub-item {
-                padding: 18px;
-            }
-            .nav {
-                gap: 15px;
-            }
-            .nav a {
-                font-size: 0.95rem;
-                padding: 6px 14px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications | Waqas Iqrar</title>
+  <meta name="description" content="Journal and conference publications by Waqas Iqrar, with DOI links and BibTeX.">
+  <link rel="canonical" href="https://iqrarwaqas.github.io/publications.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Publications | Waqas Iqrar">
+  <meta property="og:url" content="https://iqrarwaqas.github.io/publications.html">
+  <meta name="theme-color" content="#0a1220">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="publications.html" class="active">Publications</a>
-            <a href="cv.html">CV</a>
-        </nav>
+  <a class="skip" href="#main">Skip to content</a>
 
-        <div class="page-header">
-            <h1>📄 Publications</h1>
-            <p>Research papers and academic contributions</p>
-            <a href="https://scholar.google.com/citations?user=E_lOWHUAAAAJ&hl=en&oi=ao" target="_blank" class="scholar-badge">
-                <i class="ai ai-google-scholar"></i> View Google Scholar Profile
-            </a>
-        </div>
-
-        <ul class="pub-list">
-            <!-- Add your publications below. Copy a pub-item block for each new paper. -->
-
-            <li class="pub-item">
-                <div class="pub-title">
-                    <a href="https://www.sciencedirect.com/science/article/pii/S1874490725003702" target="_blank">The AIoT Ecosystem for Next-Generation Satellite Systems</a>
-                </div>
-                <div class="pub-authors">
-                    Waqas Iqrar, Kiran Khurshid, Sagheer Khan, Nasir Saeed
-                </div>
-                <div class="pub-venue">
-                    Physical Communication, Volume 74, 102967 <span class="pub-year">2026</span>
-                </div>
-                <div class="pub-links">
-                    <a href="https://www.sciencedirect.com/science/article/pii/S1874490725003702/pdfft?md5=74e511740e199fdbab605bec7f5f8da6&pid=1-s2.0-S1874490725003702-main.pdf" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-                    <a href="https://doi.org/10.1016/j.phycom.2025.102967" target="_blank"><i class="fas fa-link"></i> DOI</a>
-                </div>
-            </li>
-
-            <li class="pub-item">
-                <div class="pub-title">
-                    <a href="https://ieeexplore.ieee.org/abstract/document/10023018" target="_blank">CNN-LSTM Based Smart Real-time Video Surveillance System</a>
-                </div>
-                <div class="pub-authors">
-                    Waqas Iqrar, Malik ZainUl Abidien, Waqas Hameed, Dr. Aamir Shahzad
-                </div>
-                <div class="pub-venue">
-                    14th International Conference on Mathematics, Actuarial Science, Computer Science and Statistics (MACS) <span class="pub-year">2022</span>
-                </div>
-                <div class="pub-links">
-                    <a href="https://ieeexplore.ieee.org/abstract/document/10023018" target="_blank"><i class="fas fa-link"></i> Abstract</a>
-                </div>
-            </li>
-
-            <!-- Example of another publication entry:
-            <li class="pub-item">
-                <div class="pub-title">
-                    <a href="#">Another Paper Title</a>
-                </div>
-                <div class="pub-authors">
-                    Author A, Waqas Iqrar, Author B
-                </div>
-                <div class="pub-venue">
-                    Conference Name <span class="pub-year">2024</span>
-                </div>
-                <div class="pub-links">
-                    <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-                    <a href="#" target="_blank"><i class="fas fa-code"></i> Code</a>
-                </div>
-            </li>
-            -->
-        </ul>
-
-        <div class="note-box">
-            For a complete and up-to-date list of publications, please visit my
-            <a href="https://scholar.google.com/citations?user=E_lOWHUAAAAJ&hl=en&oi=ao" target="_blank">
-                Google Scholar profile
-            </a>.
-        </div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Waqas Iqrar</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="publications.html" aria-current="page">Publications</a>
+        <a href="cv.html">CV</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>
+        </button>
+      </nav>
     </div>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <div class="wrap">
+        <h1>Publications</h1>
+        <p>One journal article, three IEEE conference papers and one manuscript under review. Citation counts are on my Google Scholar profile.</p>
+        <div class="actions">
+          <a class="btn" href="https://scholar.google.com/citations?user=E_lOWHUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn" href="https://www.researchgate.net/profile/Waqas-Iqrar" target="_blank" rel="noopener">ResearchGate</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-label">
+          <h2>Under review</h2>
+        </div>
+        <div class="rows">
+          <article class="row">
+            <p class="when mono">2026</p>
+            <div class="body">
+              <h3>TAMIS: An Incremental Task-Aware Meta-Learning Segmentation Model</h3>
+              <p class="authors"><strong>Waqas Iqrar</strong>, M. U. Akram, T. Hassan, K. Khurshid, M. M. Mohsin</p>
+              <p class="venue">Applied Soft Computing <span class="badge mono">under review</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-label">
+          <h2>Journal</h2>
+        </div>
+        <div class="rows">
+          <article class="row">
+            <p class="when mono">2026</p>
+            <div class="body">
+              <h3><a href="https://doi.org/10.1016/j.phycom.2025.102967" target="_blank" rel="noopener">The AIoT Ecosystem for Next-Generation Satellite Systems</a></h3>
+              <p class="authors"><strong>Waqas Iqrar</strong>, Kiran Khurshid, Sagheer Khan, Nasir Saeed</p>
+              <p class="venue">Physical Communication, vol. 74, 102967</p>
+              <p>A review of about 100 recent papers that proposes a unified taxonomy of AIoT in satellite systems, covering ground station scheduling, network optimisation, predictive maintenance and security.</p>
+              <div class="pub-links mono">
+                <a href="https://doi.org/10.1016/j.phycom.2025.102967" target="_blank" rel="noopener">DOI</a>
+                <a href="https://www.sciencedirect.com/science/article/pii/S1874490725003702" target="_blank" rel="noopener">ScienceDirect</a>
+                <details class="bib">
+                  <summary>BibTeX</summary>
+                  <div class="bibbox">
+<pre>@article{iqrar2026aiot,
+  title   = {The AIoT ecosystem for next-generation satellite systems},
+  author  = {Iqrar, Waqas and Khurshid, Kiran and Khan, Sagheer and Saeed, Nasir},
+  journal = {Physical Communication},
+  volume  = {74},
+  pages   = {102967},
+  year    = {2026},
+  doi     = {10.1016/j.phycom.2025.102967}
+}</pre>
+                    <button class="copy" type="button">Copy BibTeX</button>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-label">
+          <h2>Conference</h2>
+        </div>
+        <div class="rows">
+          <article class="row">
+            <p class="when mono">2023</p>
+            <div class="body">
+              <h3><a href="https://ieeexplore.ieee.org/document/10075257" target="_blank" rel="noopener">A Real-time Sequence Based Human Activity Detection System</a></h3>
+              <p class="authors"><strong>Waqas Iqrar</strong>, Aamir Shahzad, Waqas Hameed, Malik Zain Ul Abidien</p>
+              <p class="venue">International Multi-disciplinary Conference in Emerging Research Trends (IMCERT), Karachi, pp. 1–5</p>
+              <div class="pub-links mono">
+                <a href="https://doi.org/10.1109/IMCERT57083.2023.10075257" target="_blank" rel="noopener">DOI</a>
+                <a href="https://ieeexplore.ieee.org/document/10075257" target="_blank" rel="noopener">IEEE Xplore</a>
+                <details class="bib">
+                  <summary>BibTeX</summary>
+                  <div class="bibbox">
+<pre>@inproceedings{iqrar2023activity,
+  title     = {A Real-time Sequence Based Human Activity Detection System},
+  author    = {Iqrar, Waqas and Shahzad, Aamir and Hameed, Waqas and Abidien, Malik Zain Ul},
+  booktitle = {2023 International Multi-disciplinary Conference in Emerging Research Trends (IMCERT)},
+  pages     = {1--5},
+  year      = {2023},
+  doi       = {10.1109/IMCERT57083.2023.10075257}
+}</pre>
+                    <button class="copy" type="button">Copy BibTeX</button>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article class="row">
+            <p class="when mono">2023</p>
+            <div class="body">
+              <h3><a href="https://ieeexplore.ieee.org/document/10325813" target="_blank" rel="noopener">Design Validation and Regulation of Boost Converter: A Bond Graph Approach</a></h3>
+              <p class="authors">R. Iqrar, <strong>Waqas Iqrar</strong>, S. Mazhar</p>
+              <p class="venue">3rd International Conference on Digital Futures and Transformative Technologies (ICoDT2), Islamabad, pp. 1–6</p>
+              <div class="pub-links mono">
+                <a href="https://doi.org/10.1109/ICoDT259378.2023.10325813" target="_blank" rel="noopener">DOI</a>
+                <a href="https://ieeexplore.ieee.org/document/10325813" target="_blank" rel="noopener">IEEE Xplore</a>
+                <details class="bib">
+                  <summary>BibTeX</summary>
+                  <div class="bibbox">
+<pre>@inproceedings{iqrar2023boost,
+  title     = {Design Validation and Regulation of Boost Converter: A Bond Graph Approach},
+  author    = {Iqrar, R. and Iqrar, Waqas and Mazhar, S.},
+  booktitle = {2023 3rd International Conference on Digital Futures and Transformative Technologies (ICoDT2)},
+  pages     = {1--6},
+  year      = {2023},
+  doi       = {10.1109/ICoDT259378.2023.10325813}
+}</pre>
+                    <button class="copy" type="button">Copy BibTeX</button>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article class="row">
+            <p class="when mono">2022</p>
+            <div class="body">
+              <h3><a href="https://ieeexplore.ieee.org/abstract/document/10023018" target="_blank" rel="noopener">CNN-LSTM Based Smart Real-time Video Surveillance System</a></h3>
+              <p class="authors"><strong>Waqas Iqrar</strong>, Malik Zain Ul Abidien, Waqas Hameed, Aamir Shahzad</p>
+              <p class="venue">14th International Conference on Mathematics, Actuarial Science, Computer Science and Statistics (MACS), Karachi, pp. 1–5</p>
+              <div class="pub-links mono">
+                <a href="https://doi.org/10.1109/MACS56771.2022.10023018" target="_blank" rel="noopener">DOI</a>
+                <a href="https://ieeexplore.ieee.org/abstract/document/10023018" target="_blank" rel="noopener">IEEE Xplore</a>
+                <details class="bib">
+                  <summary>BibTeX</summary>
+                  <div class="bibbox">
+<pre>@inproceedings{iqrar2022cnnlstm,
+  title     = {CNN-LSTM Based Smart Real-time Video Surveillance System},
+  author    = {Iqrar, Waqas and Abidien, Malik Zain Ul and Hameed, Waqas and Shahzad, Aamir},
+  booktitle = {2022 14th International Conference on Mathematics, Actuarial Science, Computer Science and Statistics (MACS)},
+  pages     = {1--5},
+  year      = {2022},
+  doi       = {10.1109/MACS56771.2022.10023018}
+}</pre>
+                    <button class="copy" type="button">Copy BibTeX</button>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year">2026</span> Waqas Iqrar</p>
+      <p><a href="index.html#contact">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
