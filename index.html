@@ -79,43 +79,10 @@
           </ul>
         </div>
 
-        <figure class="scan">
-          <svg viewBox="0 0 440 300" role="img" aria-label="Diagram of a baggage X-ray scan. Segmentation masks appear in three steps: laptop and bottle first, then scissors, then a knife.">
-            <rect class="bag" x="70" y="58" width="300" height="204" rx="22"/>
-            <path class="bag" d="M170 58V42a12 12 0 0 1 12-12h76a12 12 0 0 1 12 12v16" fill="none"/>
-
-            <g class="step s1">
-              <g class="c-blue">
-                <rect class="mask" x="92" y="84" width="132" height="88" rx="6"/>
-                <text class="tag" x="101" y="102">laptop</text>
-              </g>
-              <g class="c-orange">
-                <path class="mask" d="M313 92h20v16c7 3 11 9 11 17v92a10 10 0 0 1-10 10h-22a10 10 0 0 1-10-10v-92c0-8 4-14 11-17z"/>
-                <text class="tag" x="296" y="102" text-anchor="end">bottle</text>
-              </g>
-            </g>
-
-            <g class="step s2 c-green">
-              <circle class="mask" cx="252" cy="216" r="11"/>
-              <circle class="mask" cx="280" cy="216" r="11"/>
-              <path class="stroke" d="M256 205l26-66M276 205l-26-66"/>
-              <text class="tag" x="266" y="249" text-anchor="middle">scissors</text>
-            </g>
-
-            <g class="step s3 c-red">
-              <path class="mask" d="M96 232l76-22 8 22z"/>
-              <rect class="mask" x="180" y="216" width="42" height="16" rx="4"/>
-              <text class="tag" x="98" y="204">knife</text>
-            </g>
-
-            <rect class="beam" x="20" y="14" width="2" height="272"/>
-          </svg>
-          <ol class="steps mono">
-            <li><i style="background:#6ea8ff"></i><i style="background:#ff9d47"></i>Step 1: laptop, bottle</li>
-            <li><i style="background:#58d39a"></i>Step 2: + scissors</li>
-            <li><i style="background:#ff6f93"></i>Step 3: + knife</li>
-          </ol>
-          <figcaption>Class-incremental segmentation. The model learns new object classes in steps and still segments the ones it learned earlier.</figcaption>
+        <figure class="hero-fig">
+          <div class="cols mono" aria-hidden="true"><span>Input</span><span>Ground truth</span><span>Prediction</span><span>Grad-CAM</span></div>
+          <img src="assets/img/tamis-pidray.jpg" width="1100" height="1099" alt="Four baggage X-ray scans from the PIDray test set, each shown with its ground-truth mask, the mask predicted by TAMIS, and a Grad-CAM attention map. The threats are two guns, a knife and a hammer.">
+          <figcaption>TAMIS on PIDray test samples: guns, a knife and a hammer segmented in cluttered bags.</figcaption>
         </figure>
       </div>
     </section>
@@ -132,14 +99,28 @@
             <h3>Seg-ITAML: An Incremental Task-Aware Meta-Learning Framework for Semantic Segmentation in Baggage Threat Detection</h3>
             <div class="prose">
               <p>Airport scanners meet new prohibited items over time. Retraining a segmentation model from scratch for every new item is slow, and fine-tuning on the new item alone makes the model forget the old ones.</p>
-              <p>The thesis takes the idea behind iTAML from image classification to pixel-level segmentation. The resulting method, TAMIS, is a task-aware meta-learning model for task-incremental segmentation of threats such as guns and knives. It adds new classes in steps while keeping the ones it already knows.</p>
+              <p>The thesis takes the idea behind iTAML from image classification to pixel-level segmentation. The resulting method, TAMIS, treats each new threat class as a task and learns one shared initialisation that a few gradient steps can specialise to any learned task. A small replay memory limits forgetting.</p>
+              <p>No task label is given at test time. TAMIS predicts the task itself, adapts on the stored examples of that task, and restricts its output to that task's classes.</p>
             </div>
             <dl class="facts">
-              <div><dt class="mono">Backbone</dt><dd>SegFormer</dd></div>
-              <div><dt class="mono">Data</dt><dd>Multiple baggage X-ray datasets</dd></div>
+              <div><dt class="mono">Backbone</dt><dd>SegFormer-B2</dd></div>
+              <div><dt class="mono">Data</dt><dd>PIDray, STCray, PIXray, SIXray, GDXray</dd></div>
               <div><dt class="mono">Status</dt><dd>TAMIS paper under review at Applied Soft Computing</dd></div>
             </dl>
           </article>
+
+          <div class="results">
+            <h3 class="mono muted">Results from the TAMIS paper</h3>
+            <dl class="stats">
+              <div><dd>0.877</dd><dt>mIoU on PIDray after three classes were added one at a time. It started at 0.888 with one class.</dt></div>
+              <div><dd>96–98%</dd><dt>of test images routed to the correct task in the final session on PIDray, STCray and GDXray.</dt></div>
+              <div><dd>≤ 2.0 pts</dd><dt>gap in mIoU to the upper bound, where the true task is given, on those three datasets.</dt></div>
+            </dl>
+            <figure class="plot">
+              <img src="assets/img/tamis-session-miou.png" width="2000" height="853" loading="lazy" alt="Line charts of mIoU per session on PIDray, STCray and PIXray for a jointly trained SegFormer, TAMIS in the class-incremental setting, and TAMIS with the true task given. On PIDray, TAMIS goes from 0.8877 to 0.8774 over three sessions. On STCray it goes from 0.8707 to 0.7652. On PIXray it goes from 0.8667 to 0.6027.">
+              <figcaption>mIoU per session as gun (G), knife (K) and hammer (H) are added. On PIXray and SIXray the model confuses tasks more often, and task prediction is the main limit on accuracy there.</figcaption>
+            </figure>
+          </div>
 
           <ul class="chips" aria-label="Research interests">
             <li>Continual and incremental learning</li>
@@ -175,7 +156,7 @@
               <h3>Research Assistant</h3>
               <p class="where">BIOMISA Research Group, NUST · Rawalpindi</p>
               <ul class="bullets">
-                <li>Developed TAMIS, a task-aware meta-learning method for task-incremental semantic segmentation of threats in baggage X-ray images.</li>
+                <li>Developed TAMIS, a task-aware meta-learning method for class-incremental semantic segmentation of threats in baggage X-ray images.</li>
                 <li>Implemented task-incremental meta-learning for classification first, then integrated a SegFormer backbone for segmentation.</li>
                 <li>Trained and evaluated models across multiple baggage X-ray datasets.</li>
               </ul>
@@ -258,8 +239,8 @@
           <article class="row">
             <p class="when mono">2026</p>
             <div class="body">
-              <h3>TAMIS: An Incremental Task-Aware Meta-Learning Segmentation Model</h3>
-              <p class="authors"><strong>W. Iqrar</strong>, M. U. Akram, T. Hassan, K. Khurshid, M. M. Mohsin</p>
+              <h3>TAMIS: A Task-Aware Meta-Learning Framework for Class-Incremental Segmentation of X-ray Baggage Threats</h3>
+              <p class="authors"><strong>W. Iqrar</strong>, M. U. Akram, T. Hassan, K. Khurshid, M. M. Mohsan</p>
               <p class="venue">Applied Soft Computing <span class="badge mono">under review</span></p>
             </div>
           </article>
